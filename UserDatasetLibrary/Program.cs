@@ -1,4 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using UserDatasetLibrary.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<UserDbContext>(options =>
+{
+    options.UseLazyLoadingProxies(); //pokud na sobe entity zavisi aby nenacitalo obe
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"));
+});
+
 
 // Add services to the container.
 
