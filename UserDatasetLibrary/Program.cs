@@ -1,3 +1,4 @@
+//prikaz migrace do db??
 // dotnet ef  migrations add --verbose --project UserDatasetLibrary.DAL\UserDatasetLibrary.DAL.csproj --startup-project UserDatasetLibrary\UserDatasetLibrary.WebApp.csproj initMigration
 
 using Microsoft.EntityFrameworkCore;
