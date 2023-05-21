@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNet.Identity;
+﻿/*
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UserDatasetLibrary.Core.Dtos.Foto;
 using UserDatasetLibrary.Core.Services.Interfaces;
@@ -64,3 +64,4 @@ namespace UserDatasetLibrary.WebApp.Controllers
         }
     }
 }
+*/

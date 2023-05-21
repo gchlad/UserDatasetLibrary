@@ -10,6 +10,7 @@ namespace UserDatasetLibrary.DAL
         {
         }
         public DbSet<FotoEntity> Fotos { get; set; }
+        //public DbSet<UsersEntity> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
