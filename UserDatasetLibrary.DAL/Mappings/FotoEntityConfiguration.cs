@@ -9,7 +9,7 @@ using UserDatasetLibrary.DAL.Entities;
 
 namespace UserDatasetLibrary.DAL.Mappings
 {
-    public sealed class FotoEntityClassConfiguration : IEntityTypeConfiguration<FotoEntity>
+    public sealed class FotoEntityConfiguration : IEntityTypeConfiguration<FotoEntity>
     {
         public void Configure(EntityTypeBuilder<FotoEntity> builder)
         {

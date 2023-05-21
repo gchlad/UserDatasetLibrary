@@ -1,21 +1,24 @@
 //prikaz migrace do db??
 // dotnet ef  migrations add --verbose --project UserDatasetLibrary.DAL\UserDatasetLibrary.DAL.csproj --startup-project UserDatasetLibrary\UserDatasetLibrary.WebApp.csproj initMigration
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UserDatasetLibrary.Core.Extensions;
 using UserDatasetLibrary.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// Add services to the container.
 builder.Services.AddDbContext<UserDbContext>(options =>
 {
     options.UseLazyLoadingProxies(); //pokud na sobe entity zavisi aby nenacitalo obe
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"));
 });
-
-
-// Add services to the container.
+builder.Services.AddIdentity <IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<UserDbContext>()
+    .AddDefaultTokenProviders();
+    
+    //(options =>  options.SignIn.RequireConfirmedAccount = true);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

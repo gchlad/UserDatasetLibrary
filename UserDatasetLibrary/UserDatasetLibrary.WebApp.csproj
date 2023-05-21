@@ -19,4 +19,8 @@
     <ProjectReference Include="..\UserDatasetLibrary.Core\UserDatasetLibrary.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Messages\" />
+  </ItemGroup>
+
 </Project>
