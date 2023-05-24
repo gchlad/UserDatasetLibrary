@@ -15,8 +15,8 @@ namespace UserDatasetLibrary.WebApp.Controllers
             this.userService = userService;
         }
 
-        [HttpGet("{id:int}")]
-        public IActionResult GetById([FromRoute] string id)
+        [HttpGet("{id}")]
+        public IActionResult GetById([FromRoute] Guid id)
         {
             UserDto? dto = userService.GetUserById(id);
             if (dto is null)
@@ -24,6 +24,14 @@ namespace UserDatasetLibrary.WebApp.Controllers
                 return NotFound();
             }
             return Ok(dto); // TODO: add message object and mapping
+        }
+        
+        [HttpGet()]
+        public IActionResult GetAllUsers()
+        {
+            UserDto[] arrayDto = userService.GetAllUsers();
+            //if (arrayDto is null)     //{return NotFound();}
+            return Ok(arrayDto); // TODO: add message object and mapping
         }
 
         [HttpPost]
@@ -33,8 +41,9 @@ namespace UserDatasetLibrary.WebApp.Controllers
             return Created(nameof(GetById), user);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteUser([FromBody] UserDto user) // TODO: use request object instead of core dto
+        [HttpDelete("{id}")]
+        //TODO:make it async
+        public IActionResult DeleteUserById([FromRoute] Guid id) // TODO: use request object instead of core dto
         {
             UserDto? dto = userService.DeleteUserById(id);
             if (dto is null)
@@ -42,8 +51,9 @@ namespace UserDatasetLibrary.WebApp.Controllers
                 return NotFound();
             }
             return Ok(dto);
+            //Deleted(nameof(GetById), user);
         }
-
+        /*
         public IHttpActionResult DeleteUser(int id)
         {
             User user = users.FirstOrDefault(u => u.Id == id);
@@ -54,7 +64,8 @@ namespace UserDatasetLibrary.WebApp.Controllers
 
             users.Remove(user);
             return Ok(user);
-        }
+        }*/
+    }
 }
 
 

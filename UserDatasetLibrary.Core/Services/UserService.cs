@@ -27,12 +27,7 @@ namespace UserDatasetLibrary.Core.Services
             await _context.SaveChangesAsync();
         }
 
-        /*public Task CreateUser(UserDto user)
-        {
-            throw new NotImplementedException();
-        }*/
-
-        public UserDto? GetUserById(string id)
+        public UserDto? GetUserById(Guid id)
         {
             UsersEntity? entity = _context.Users.Where(f => f.Id == id).FirstOrDefault(); 
             // TODO: throw entity not found exception and set up exception handling middleware
@@ -44,14 +39,17 @@ namespace UserDatasetLibrary.Core.Services
             return entities.Select(u => u.ToDto()).ToArray();
         }
 
-        public async Task DeleteUserById(string id)
+        public UserDto? DeleteUserById(Guid id) //TODO: Make it Async 
         {
-            UsersEntity? entity = _context.Users.Where(f => f.Id == id).First();
+            UsersEntity? entity = _context.Users.Where(f => f.Id == id).FirstOrDefault();
             // TODO: throw entity not found exception and set up exception handling middleware
-            await _context.Users.Update(entity);
-            await _context.SaveChangesAsync();
+            entity.IsDeleted = true;
+            _context.Users.Update(entity);
+            _context.SaveChangesAsync();
+            //await _context.Users.Update(entity);
+            //await _context.SaveChangesAsync();
 
-            //return entity?.ToDto();
+            return entity?.ToDto();
         }
         /*
         public UserDto? GetUserById(int id)

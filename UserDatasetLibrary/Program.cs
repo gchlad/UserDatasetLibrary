@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UserDatasetLibrary.Core.Extensions;
 using UserDatasetLibrary.DAL;
+using UserDatasetLibrary.DAL.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +15,16 @@ builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseLazyLoadingProxies(); //pokud na sobe entity zavisi aby nenacitalo obe
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"));
 });
-builder.Services.AddIdentity <IdentityUser, IdentityRole>()
+/*
+builder.Services.AddIdentity <UsersEntity>()
+    .AddEntityFrameworkStores<UserDbContext, Guid>()
+    .AddDefaultTokenProviders();
+*/
+builder.Services.AddIdentity<UsersEntity, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<UserDbContext>()
     .AddDefaultTokenProviders();
-    
-    //(options =>  options.SignIn.RequireConfirmedAccount = true);
+
+//(options =>  options.SignIn.RequireConfirmedAccount = true);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

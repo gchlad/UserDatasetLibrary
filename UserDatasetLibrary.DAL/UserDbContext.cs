@@ -1,11 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using UserDatasetLibrary.DAL.Entities;
 
 namespace UserDatasetLibrary.DAL
 {
-    public sealed class UserDbContext : IdentityDbContext<UsersEntity>
+    public sealed class UserDbContext : IdentityDbContext<UsersEntity, IdentityRole<Guid>, Guid>
     {
+        /*
+        public class GuidDataContext :
+        IdentityDbContext<IdentityUser<Guid>, IdentityRole<Guid>, Guid>
+        {
+        }*/
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
         {
         }
