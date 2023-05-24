@@ -13,8 +13,11 @@ namespace UserDatasetLibrary.Core.Extensions
     {
         public static IServiceCollection RegisterTransientCrudServices(this IServiceCollection services)
         {
-            services.AddTransient<IFotoService, FotoService>();
+            services.AddTransient<IFotoService, FotoService>()
+                .AddTransient<IUserService, UserService>();
             return services;
+            //services.AddTransient<IUserService, UserService>();
+            //return services;
         }
     }
 }

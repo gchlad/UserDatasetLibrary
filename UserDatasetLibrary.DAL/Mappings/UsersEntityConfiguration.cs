@@ -15,6 +15,10 @@ namespace UserDatasetLibrary.DAL.Mappings
             builder.Property(x => x.Name)
                 .IsRequired()
                 .HasMaxLength(256);
+            /*builder.Property(x => x.isDeleted)
+                .ValueGeneratedOnAdd(bool.true)
+                .IsRequired()
+                .HasMaxLength(256);*/
         } 
     }
 }
