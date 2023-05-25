@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDatasetLibrary.WebApp", "UserDatasetLibrary\UserDatasetLibrary.WebApp.csproj", "{301071D5-02D8-4562-AC4E-D40D749C8460}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserDatasetLibrary.WebApp", "UserDatasetLibrary\UserDatasetLibrary.WebApp.csproj", "{301071D5-02D8-4562-AC4E-D40D749C8460}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDatasetLibrary.Core", "UserDatasetLibrary.Core\UserDatasetLibrary.Core.csproj", "{F996D089-E79B-445B-A6EC-168E2C283ACA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserDatasetLibrary.Core", "UserDatasetLibrary.Core\UserDatasetLibrary.Core.csproj", "{F996D089-E79B-445B-A6EC-168E2C283ACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDatasetLibrary.DAL", "UserDatasetLibrary.DAL\UserDatasetLibrary.DAL.csproj", "{DA79A53C-400C-454A-8A3E-5B700F6F424A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserDatasetLibrary.DAL", "UserDatasetLibrary.DAL\UserDatasetLibrary.DAL.csproj", "{DA79A53C-400C-454A-8A3E-5B700F6F424A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vue", "Vue\Vue.csproj", "{97700727-4631-4D9B-9968-DF6CD2F861B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{DA79A53C-400C-454A-8A3E-5B700F6F424A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA79A53C-400C-454A-8A3E-5B700F6F424A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA79A53C-400C-454A-8A3E-5B700F6F424A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97700727-4631-4D9B-9968-DF6CD2F861B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97700727-4631-4D9B-9968-DF6CD2F861B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97700727-4631-4D9B-9968-DF6CD2F861B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97700727-4631-4D9B-9968-DF6CD2F861B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
