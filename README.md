@@ -1,5 +1,5 @@
 # UserDatasetLibrary
 
-Projekt I. - Webová aplikace pro průmyslové využití
+Projekt - Návrh BE webové aplikace
 
-Slouží jako uživatelské rozhraní
+Vrstvy Prezentační, DTO, Aplikační + namapovaná databáze 
