@@ -1,4 +1,4 @@
-//prikaz migrace do db??
+// migration to db
 // dotnet ef  migrations add --verbose --project UserDatasetLibrary.DAL\UserDatasetLibrary.DAL.csproj --startup-project UserDatasetLibrary\UserDatasetLibrary.WebApp.csproj initMigration
 
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<UserDbContext>(options =>
 {
-    options.UseLazyLoadingProxies(); //pokud na sobe entity zavisi aby nenacitalo obe
+    options.UseLazyLoadingProxies(); // when entities depend on each other to not load both
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"));
 });
 
